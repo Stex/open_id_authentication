@@ -4,6 +4,8 @@ require "open_id_authentication/controller_methods"
 require "open_id_authentication/railtie" if defined?(::Rails::Railtie)
 
 module OpenIdAuthentication
+  class InvalidOpenId << Exception; end
+
   # deprecated middleware creation
   def self.new(*args)
     raise "Use OpenIdAuthentication::Middleware"
